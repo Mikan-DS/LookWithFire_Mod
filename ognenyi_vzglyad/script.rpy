@@ -793,7 +793,7 @@ label fl_day2:
     "Не знаю почему, но в этот момент я больше любовался этой злюкой, чем слушал её."
 
     $ renpy.pause (1)
-    show dv lnes ov at center with dissolve_fast
+    show dv angry pioneer at center with dissolve_fast
 
     dv "Ау, есть кто дома?"
 

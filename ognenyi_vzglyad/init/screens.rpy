@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 init 100:
-    $ mods["fl_start"] = u"{font=mods/ognenyi_vzglyad/ov_font.ttf}{size=40}ОГНЕННЫЙ ВЗГЛЯД:RE{/size}{/font}"
 
     python:
         #Трансформы

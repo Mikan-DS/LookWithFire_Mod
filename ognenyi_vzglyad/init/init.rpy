@@ -3,13 +3,8 @@ init:
     python:
         import os
 
-        mods["fl_start"] =  u"{font=mods/ognenyi_vzglyad/fonts/ov_font.ttf}{size=40}ОГНЕННЫЙ ВЗГЛЯД: RE{/size}{/font}"
+        mods["fl_start"] =  u"{font=mods/ognenyi_vzglyad/fonts/ov_font.ttf}{size=40}ОГНЕННЫЙ ВЗГЛЯД{/size}{/font}"
 
-        def ch(name="...", color="#999", **kwargs):
-            """
-                Для эпизодический персонажей, ибо зачем ради трех фраз мусорить чэректерами?
-            """
-            return Character(name, color=color, **kwargs)
 
         for file in renpy.list_files(): # Что, новомодное объявление файлов хотите? Ну смотрите, даже разьясню что это за бублик
             if "ognenyi_vzglyad" in file: # Проверяет от нашего ли мода этот файл
