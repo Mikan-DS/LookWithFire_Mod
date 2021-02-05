@@ -3362,8 +3362,7 @@ label fl_day3:
 
     "Я уселся на кушетке и было засобирался, но мой пришедший в себя организм тут же напомнил, по поводу чего мне нужно было поговорить с Виолой."
 
-    # Музыка Internal Louding # П.П ЕТО ШО?
-
+    play music music_list["eternal_longing"] fadein 3
     $ renpy.pause (2.0)
     show cs normal glasses with dissolve
 
