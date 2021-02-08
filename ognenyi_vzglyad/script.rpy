@@ -2363,8 +2363,8 @@ label fl_day2:
 label fl_day3:
 
     $ persistent.sprite_time = 'sunset'
-	$ sunset_time()
-	$ new_chapter(1, u"Огненный взгляд {p}День 3")
+    $ sunset_time()
+    $ new_chapter(1, u"Огненный взгляд {p}День 3")
     "…"
 
     play music music_list["smooth_machine"] fadein 3
