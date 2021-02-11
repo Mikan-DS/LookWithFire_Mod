@@ -99,7 +99,6 @@ label fl_prologue:
 
 label fl_day2:
 
-    #play movie "mods/ognenyi_vzglyad/video/ov_perexod_dnya2.ogv"
     $ renpy.movie_cutscene("mods/ognenyi_vzglyad/video/ov_perexod_dnya2.ogv")
     $ new_chapter(1, u"Огненный взгляд {p}День 2")
 
@@ -2353,6 +2352,7 @@ label fl_day2:
     # щелк #П.П а звука то нет
     scene bg int_house_of_mt_night2
     with dissolve_fast
+    stop music fadeout 3
     $ renpy.pause (1)
     show blink
     pause 3
@@ -2362,9 +2362,12 @@ label fl_day2:
 
 label fl_day3:
 
+
+    $ renpy.movie_cutscene("mods/ognenyi_vzglyad/video/ov_perexod_dnya3.ogv")
     $ persistent.sprite_time = 'sunset'
     $ sunset_time()
     $ new_chapter(1, u"Огненный взгляд {p}День 3")
+    
     "…"
 
     play music music_list["smooth_machine"] fadein 3
