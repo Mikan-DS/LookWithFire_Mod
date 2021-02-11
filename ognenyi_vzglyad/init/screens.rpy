@@ -151,6 +151,14 @@ screen fl_menu_GUI_screen:
 
         hotspot (183, 806, 196, 196) action ShowMenu("fl_menu_vk")
 
+    text "0.21.2.11 Beta":
+        size 25
+        color "#AAA"
+        at transform:
+            xanchor 1.0
+            xpos 0.9
+            yoffset 20
+            alpha 0.65
 
 screen fl_menu_in_progress:
 
