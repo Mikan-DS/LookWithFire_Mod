@@ -88,10 +88,10 @@ label fl_start:
     scene black with dissolve
     $ renpy.pause(3, hard = True)
 
-    show text "{size=70}RedHead Team представляет{/size}" at truecenter
+    show image Text("{size=70}RedHead Team представляет{/size}", slow_cps = 25) at truecenter#text "{size=70}RedHead Team представляет{/size}" at truecenter:
 
-    with dissolve
-    pause 1
+    #with dissolve
+    pause 2#1
     hide text
     with dissolve
 
@@ -151,7 +151,7 @@ screen fl_menu_GUI_screen:
 
         hotspot (183, 806, 196, 196) action ShowMenu("fl_menu_vk")
 
-    text "0.21.2.11 Beta":
+    text "0.21.2.18 Git": # А вообще вот тут было бы хорошо стирать Git дабы версию указывать точнее
         size 25
         color "#AAA"
         at transform:

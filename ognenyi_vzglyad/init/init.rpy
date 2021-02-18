@@ -11,7 +11,8 @@ init:
                 file_name = os.path.splitext(os.path.basename(file))[0] # Достаем имя файла
 
                 if file.endswith((".png", ".jpg", ".webp")): # Фильтр на изображения
-                    if "sprites" in file: # Если он в директории спрайтов, то по красоте с матрицой добавляет спрайт
+
+                    if "sprites" in file and  not "composite" in file: # Если он в директории спрайтов, то по красоте с матрицой добавляет спрайт # За исключением компонентных спрайтов, они будут обьявлены дальше
                         renpy.image( # По факту, так же обьявляет изображение, но реализуемо подругому. Не забудьте использовать bg cg и подобную херотеть в названии папок
                             file_name.replace("_", " "), # имя по которому будем обращаться
                             ConditionSwitch(
@@ -41,6 +42,13 @@ init:
 
         ov_trise = Dissolve(1.5)
 
+    ### Особое исключение, так как не был найден спрайт в оригинале, вернее, спрайта в купальнике, пришлось сделать этого мутанта из мода и ванилы
+    image dv sad swim = ConditionSwitch(
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"),(0,0), "mods/ognenyi_vzglyad/images/sprites/dv/composite/dv_3_swim.png",(0,0), get_image("sprites/normal/dv/dv_3_sad.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"),(0,0), "mods/ognenyi_vzglyad/images/sprites/dv/composite/dv_3_swim.png",(0,0), get_image("sprites/normal/dv/dv_3_sad.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"),(0,0), "mods/ognenyi_vzglyad/images/sprites/dv/composite/dv_3_swim.png",(0,0), get_image("sprites/normal/dv/dv_3_sad.png")) )
+
+    ### Трансформация бега
     transform running():
         zoom 1.01 align (0.5, 0.5)
         ease 0.35 xalign 0.35 yalign 0.65
