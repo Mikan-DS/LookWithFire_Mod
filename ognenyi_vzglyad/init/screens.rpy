@@ -85,6 +85,8 @@ label fl_start:
     window hide
 
     #$config.developer = True
+    stop music
+    stop ambience
     scene black with dissolve
     $ renpy.pause(3, hard = True)
 
@@ -151,14 +153,10 @@ screen fl_menu_GUI_screen:
 
         hotspot (183, 806, 196, 196) action ShowMenu("fl_menu_vk")
 
-    text "0.21.2.18 Git": # А вообще вот тут было бы хорошо стирать Git дабы версию указывать точнее
+    text "0.21.2.23 Git" xanchor 1.0 xpos 0.9 yoffset 20: # А вообще вот тут было бы хорошо стирать Git дабы версию указывать точнее
         size 25
         color "#AAA"
-        at transform:
-            xanchor 1.0
-            xpos 0.9
-            yoffset 20
-            alpha 0.65
+
 
 screen fl_menu_in_progress:
 
@@ -211,6 +209,7 @@ screen dinamic_particles:
     add "mods/ognenyi_vzglyad/gui/dv_chibi.png" at alisas_jump
 
 label fl_true_exit:
+    window hide dissolve
     stop music fadeout 3
     scene black with dissolve
     pause 1
