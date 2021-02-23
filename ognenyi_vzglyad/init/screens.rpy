@@ -143,15 +143,15 @@ screen fl_menu_GUI_screen:
 
         auto "mods/ognenyi_vzglyad/gui/menu/overlay_%s.png"
 
-        hotspot (996, 505, 741, 110) action Jump("fl_enter_game")
+        hotspot adapt_hotspot(996, 505, 741, 110) action Jump("fl_enter_game")
 
-        hotspot (912, 615, 834, 110) action ShowMenu("fl_menu_in_progress")
+        hotspot adapt_hotspot(912, 615, 834, 110) action ShowMenu("fl_menu_in_progress")
 
-        hotspot (1089, 725, 650, 110) action ShowMenu("fl_menu_in_progress")
+        hotspot adapt_hotspot(1089, 725, 650, 110) action ShowMenu("fl_menu_in_progress")
 
-        hotspot (1329, 835, 409, 110) action ShowMenu("fl_menu_exit")
+        hotspot adapt_hotspot(1329, 835, 409, 110) action ShowMenu("fl_menu_exit")
 
-        hotspot (183, 806, 196, 196) action ShowMenu("fl_menu_vk")
+        hotspot adapt_hotspot(183, 806, 196, 196) action ShowMenu("fl_menu_vk")
 
     text "0.21.2.23 Git" xanchor 1.0 xpos 0.9 yoffset 20: # А вообще вот тут было бы хорошо стирать Git дабы версию указывать точнее
         size 25
