@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 init:
 
-
     transform zoom_mobile: #Адаптируем под андрюху
         zoom 0.66666666666666 # Чем больше шестерок, тем лучше
 
@@ -10,10 +9,10 @@ init:
 
         mods["fl_start"] =  u"{font=mods/ognenyi_vzglyad/fonts/ov_font.ttf}{size=40}ОГНЕННЫЙ ВЗГЛЯД{/size}{/font}"
 
-		def adapt_hotspot(*points):
+        def adapt_hotspot(*points):
             for i, p in enumerate(points):
                 points[i] = int(p*0.66666666)
-            return *points
+            return points if len(points) > 1 else points[0] or 0 else points[0] or 0
 
         for file in renpy.list_files(): # Что, новомодное объявление файлов хотите? Ну смотрите, даже разьясню что это за бублик
             if "ognenyi_vzglyad" in file: # Проверяет от нашего ли мода этот файл
@@ -61,19 +60,19 @@ init:
     ### Особое исключение, так как не был найден спрайт в оригинале, вернее, спрайта в купальнике, пришлось сделать этого мутанта из мода и ванилы
 
     image dv sad swim = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_3_sad.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_3_sad.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_3_sad.png")) )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0), get_image("sprites/normal/dv/dv_3_sad.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0), get_image("sprites/normal/dv/dv_3_sad.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0), get_image("sprites/normal/dv/dv_3_sad.png")) )
 
     image dv shy swim = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_3_shy.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_3_shy.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_3_shy.png")) )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0), get_image("sprites/normal/dv/dv_3_shy.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0), get_image("sprites/normal/dv/dv_3_shy.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_3_body.png"), (0,0), get_image("sprites/normal/dv/dv_3_shy.png")) )
 
     image dv angry swim = ConditionSwitch(
-    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"),(0,0),(0,0), get_image("sprites/normal/dv/dv_5_angry.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
-    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"),(0,0),(0,0), get_image("sprites/normal/dv/dv_5_angry.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
-    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"), (0,0),(0,0), get_image("sprites/normal/dv/dv_5_angry.png")) )
+    "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"), (0,0), get_image("sprites/normal/dv/dv_5_angry.png")), im.matrix.tint(0.94, 0.82, 1.0) ),
+    "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"), (0,0), get_image("sprites/normal/dv/dv_5_angry.png")), im.matrix.tint(0.63, 0.78, 0.82) ),
+    True,im.Composite((900, 1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"), (0,0), get_image("sprites/normal/dv/dv_5_angry.png")) )
 
     ### Трансформация бега
     transform running():

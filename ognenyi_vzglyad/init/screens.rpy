@@ -139,6 +139,26 @@ screen fl_menu_GUI_screen:
 
     tag menu
 
+    if renpy.mobile: # Если мод запущен с мобилы
+        text "mobile" xanchor 1.0 xpos 0.9 yoffset 10:
+            size 15
+            color "#AAA"
+
+        button pos adapt_hotspot(996, 505) xysize adapt_hotspot(741, 110) action Jump("fl_enter_game"):
+            background None
+
+        button pos adapt_hotspot(912, 615) xysize adapt_hotspot(834, 110) action ShowMenu("fl_menu_in_progress"):
+            background None
+
+        button pos adapt_hotspot(1089, 725) xysize adapt_hotspot(650, 110) action ShowMenu("fl_menu_in_progress"):
+            background None
+
+        button pos adapt_hotspot(1329, 835) xysize adapt_hotspot(409, 110) action ShowMenu("fl_menu_exit"):
+            background None
+
+        button pos adapt_hotspot(183, 806) xysize adapt_hotspot(196, 196) action ShowMenu("fl_menu_vk"):
+            background None
+
     imagemap:
 
         auto "mods/ognenyi_vzglyad/gui/menu/overlay_%s.png"
@@ -152,6 +172,8 @@ screen fl_menu_GUI_screen:
         hotspot adapt_hotspot(1329, 835, 409, 110) action ShowMenu("fl_menu_exit")
 
         hotspot adapt_hotspot(183, 806, 196, 196) action ShowMenu("fl_menu_vk")
+
+
 
     text "0.21.2.23 Git" xanchor 1.0 xpos 0.9 yoffset 20: # А вообще вот тут было бы хорошо стирать Git дабы версию указывать точнее
         size 25

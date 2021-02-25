@@ -1783,7 +1783,7 @@ label fl_day2:
 
     play music fl_lgg_symphonical_rain_willfully fadein 3
 
-    show image im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/far/dv/dv_2_body.png"),(0,0), get_image("sprites/far/dv/dv_2_pioneer2.png"),(0,0), get_image("sprites/far/dv/dv_2_grin.png")), im.matrix.desaturate()) as dv
+    show image im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/normal/dv/dv_2_body.png"),(0,0), get_image("sprites/normal/dv/dv_2_pioneer2.png"),(0,0), get_image("sprites/normal/dv/dv_2_grin.png")), im.matrix.desaturate()) as dv
     with dissolve2
     window show dissolve
 
@@ -1821,18 +1821,19 @@ label fl_day2:
 
     me "Дать,{w=0.3} или не дать? {w}Вот в чём вопрос!"
 
-    show image  im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/far/dv/dv_5_body.png"),(0,0), get_image("sprites/far/dv/dv_5_pioneer2.png"),(0,0), get_image("sprites/far/dv/dv_5_angry.png")), im.matrix.desaturate()) as dv
+    show image  im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"),(0,0), get_image("sprites/normal/dv/dv_5_pioneer2.png"),(0,0), get_image("sprites/normal/dv/dv_5_angry.png")), im.matrix.desaturate()) as dv
     with dissolve
 
     dv "Мое терпение не железное!"
 
-    show image  im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/far/dv/dv_5_body.png"),(0,0), get_image("sprites/far/dv/dv_5_pioneer2.png"),(0,0), get_image("sprites/far/dv/dv_5_angry.png")), im.matrix.desaturate()) as dv:
-        ease 3 zoom 1.7 yanchor 0.7
+    show image  im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/normal/dv/dv_5_body.png"),(0,0), get_image("sprites/normal/dv/dv_5_pioneer2.png"),(0,0), get_image("sprites/normal/dv/dv_5_angry.png")), im.matrix.desaturate()) as dv:
+        ease 3 zoom 1.6 yoffset adapt_hotspot(400)
 
     me "Да шучу, шучу! {w} Если что, {w=0.3}я не виноват. {w}Под твою ответственность."
 
+    show image im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/normal/dv/dv_4_body.png"),(0,0), get_image("sprites/normal/dv/dv_4_pioneer2.png"),(0,0), get_image("sprites/normal/dv/dv_4_normal.png")), im.matrix.desaturate() ) as dv with dissolve
     show image im.MatrixColor( im.Composite((900,1080), (0,0), get_image("sprites/normal/dv/dv_4_body.png"),(0,0), get_image("sprites/normal/dv/dv_4_pioneer2.png"),(0,0), get_image("sprites/normal/dv/dv_4_normal.png")), im.matrix.desaturate() ) as dv:
-        ease 1 zoom 1 yanchor 1.0
+        ease 1 zoom 1.0  yoffset 0
 
     "Сказал я, будучи заранее уверенным в том, что меня выставят чуть ли не зачинщиком."
 
@@ -3767,7 +3768,7 @@ label fl_day3:
     scene bg black
     with dissolve
     $ renpy.pause (1)
-    scene bg int_musclub_sunset with dspr
+    scene bg int_musclub_day with dspr
     play ambience ambience_music_club_day fadein 3
     window show dissolve
 
@@ -4230,7 +4231,7 @@ label fl_day4:
 
     $ renpy.movie_cutscene("mods/ognenyi_vzglyad/video/ov_perexod_dnya3.ogv") # П.П. Если надобно поставить переход, то лучше сразу мне кидать, что бы на гите версию не путать :)
     $ persistent.sprite_time = 'sunset'
-    $ sunset_time()
+    $ day_time()
     $ new_chapter(1, u"Огненный взгляд {p}День 4")
     scene bg black
     play ambience ambience_camp_center_day fadein 3
@@ -4549,7 +4550,8 @@ label fl_day4:
 
     "Сняла заколку, бросив её в сторону. {w}Вторая полетела за ней следом. {w}Галстук переехал на запястье, а его хозяйка несколькими резкими движениями растрепала волосы, создавая творческий беспорядок на голове."
 
-    show dv grin pioneer2 at center with dissolve
+    show dv grin pioneer2 at center with dissolve:
+        zoom 1.0
     $ renpy.pause (1)
 
     "Я невольно открыл рот. {w}От чего больше, изумления или возбуждения, определить так и не удалось."
@@ -5739,11 +5741,12 @@ label fl_day4:
 
     "Я в точности повторил действия Алисы, будто бы я её мужская версия из более темного времени. {w}Но стоит отдать Алисе должное – в свои 17 лет она играет практически как я в свои 27. {w}10 лет разница, ёк-макарек!"
 
-    show mi surprise pioneer far at right behind dv with dissolve
+    show mi surprise pioneer far at right behind dv with dissolve2
+    pause 2
     show image Solid("#F005") as redRage with dissolve
     show dv angry pioneer2:
         xalign 0.5
-        ease 1 zoom 1.2 yoffset 20
+        ease 3 zoom 1.2 yoffset 20
 
     "На каждый ее трек, на каждый ее риф я находил более новый, более подходящий мне, что заставляло Алису злиться, а Мику восторгаться моими композиторскими, пусть и лживыми, способности."
 
@@ -5915,7 +5918,7 @@ label fl_day4:
 
     me "Кхм, скажу твоими словами."
 
-    me "Неплохо играешь"
+    me "Неплохо играешь."
 
     show dv laugh pioneer2 at cleft with dissolve
 

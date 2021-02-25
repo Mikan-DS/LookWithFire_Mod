@@ -12,7 +12,7 @@ init:
 
         def adapt_hotspot(*points):
 
-            return *points
+            return points if len(points) > 1 else points[0] or 0
 
 
         for file in renpy.list_files(): # Что, новомодное объявление файлов хотите? Ну смотрите, даже разьясню что это за бублик
